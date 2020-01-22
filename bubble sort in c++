@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+int arr[100],i,j,temp,f=0,n;
+cin>>n;
+for(i=0;i<n;i++)
+{
+cin>>arr[i];
+}
+for(i=0;i<n-1;i++)//outer loop
+{
+for(j=0;j<(n-i)-1;j++)//inner loop
+{
+if(arr[j]>arr[j+1])//use to compare the first position and second position values into the given array 
+{
+temp=arr[j];
+arr[j]=arr[j+1];
+arr[j+1]=temp;
+f=1;
+}
+}
+if(f==0)//used to check if the condition get satisfied 
+{
+break;
+}
+}
+for(i=0;i<n;i++)//used to print the required array
+{
+cout<<arr[i]<<" ";
+}
+}
